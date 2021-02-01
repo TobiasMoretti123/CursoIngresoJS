@@ -1,6 +1,0 @@
-Modifico comando:
-git status
-git add .
-git commit -m
-git config --global user.email
-git push
