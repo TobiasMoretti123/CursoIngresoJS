@@ -7,17 +7,12 @@ function mostrarAumento()
 {
 	var numero1;
 	var numero1parsiado;
+	var resultado; 
 
 	numero1 = txtIdSueldo.value;
+    numero1parsiado = parseInt(numero1);
 
-	//transfromacion
-	numero1parsiado = parseInt(numero1);
+	resultado = (numero1parsiado*10/100+numero1parsiado);
+	txtIdResultado.value = resultado
 
-	alert (numero1parsiado*10/100);
-	
-
-
-
-
-	
 }
