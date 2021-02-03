@@ -8,7 +8,7 @@ function mostrar()
     var anchoparceado;
 
 
-    largo = prompt ("ingreso el largo de un rectangulo");
+    largo = prompt ("ingrese el largo de un rectangulo");
     ancho = prompt ("ingrese ancho de un rectangulo");
 
     largoparceado = parseInt(largo);
