@@ -8,7 +8,7 @@ function SacarResto()
 	var numero1;
 
 	var numero2;
-	var suma;
+	var resto;
 	var numero1parsiado
 	var numero2parsiado
 
@@ -19,7 +19,7 @@ function SacarResto()
 	numero1parsiado = parseInt(numero1);
 	numero2parsiado = parseInt(numero2);
 
-	suma = numero1parsiado % numero2parsiado;
+	resto = numero1parsiado % numero2parsiado;
 
-	alert ("El resto es "+suma);	
+	alert ("El resto es "+resto);	
 }

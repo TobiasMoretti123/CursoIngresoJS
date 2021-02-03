@@ -26,25 +26,64 @@ function sumar()
 
 function restar()
 {
+	var numero1;
 
-	suma = numero1parsiado - numero2parsiado;
+	var numero2;
+	var resta;
+	var numero1parsiado
+	var numero2parsiado
 
-	alert ("La resta es "+suma);
+	numero1 = txtIdNumeroUno.value;
+	numero2 = txtIdNumeroDos.value;
+
+	//transfromacion
+	numero1parsiado = parseInt(numero1);
+	numero2parsiado = parseInt(numero2);
+
+	resta = numero1parsiado - numero2parsiado;
+
+	alert ("La resta es "+resta);
 }
 
 function multiplicar()
 { 
-	
-	suma = numero1parsiado * numero2parsiado;
+	var numero1;
 
-	alert ("La multiplicacion es "+suma);
+	var numero2;
+	var multiplicacion;
+	var numero1parsiado
+	var numero2parsiado
+
+	numero1 = txtIdNumeroUno.value;
+	numero2 = txtIdNumeroDos.value;
+
+	//transfromacion
+	numero1parsiado = parseInt(numero1);
+	numero2parsiado = parseInt(numero2);
+
+	multiplicacion = numero1parsiado * numero2parsiado;
+
+	alert ("La multiplicacion es "+multiplicacion);
 }
 
 function dividir()
 {
+	var numero1;
 
-	suma = numero1parsiado / numero2parsiado;
+	var numero2;
+	var division;
+	var numero1parsiado
+	var numero2parsiado
 
-	alert ("La division es "+suma);
+	numero1 = txtIdNumeroUno.value;
+	numero2 = txtIdNumeroDos.value;
+
+	//transfromacion
+	numero1parsiado = parseInt(numero1);
+	numero2parsiado = parseInt(numero2);
+
+	division = numero1parsiado / numero2parsiado;
+
+	alert ("La division es "+division);
 }
 
