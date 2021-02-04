@@ -56,7 +56,7 @@ function Materiales ()
     largoParceado = parseInt (largo);
     anchoParceado = parseInt (ancho);
 
-    perimetro = (largoParceado*2 + anchoParceado*2); 
+    perimetro = (largoParceado * anchoParceado); 
 
     alert ("se requiere "+perimetro*2+ " bolsas de cemento y "+perimetro*3+" bolsas de cal");
 }
