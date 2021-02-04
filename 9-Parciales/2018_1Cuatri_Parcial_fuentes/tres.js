@@ -11,8 +11,8 @@ function mostrar()
 
     precioParceado = parseInt (precio);
     descuentoParceado = parseInt (descuento);
-    precioFinal = precio-descuento
+    precioFinal = precio-descuento;
 
-    elPrecioFinal.value = precioFinal
+    elPrecioFinal.value = precioFinal;
    
 }
