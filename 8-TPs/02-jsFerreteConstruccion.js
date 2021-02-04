@@ -29,11 +29,12 @@ function Circulo ()
     var radioParceado;
     var diametro;
     var alambre;
+    var pi = Math.PI 
 
     radio = txtIdRadio.value;
 
     radioParceado = parseInt(radio);
-    diametro = radio*2*3,14;
+    diametro = radio*2*pi
     alambre = diametro;
 
     alert ("Se requiere "+alambre*3+" metros de alambre");
