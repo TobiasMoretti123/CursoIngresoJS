@@ -20,7 +20,7 @@ function Rectangulo ()
 
     perimetro = (largoParceado*2 + anchoParceado*2); 
 
-    alert ("se requiere "+perimetro*3+ " de alambre");
+    alert ("se requiere "+perimetro*3+ " metros de alambre");
 
 }
 function Circulo () 
@@ -36,7 +36,7 @@ function Circulo ()
     diametro = radio*2*3,14;
     alambre = diametro;
 
-    alert ("Se requiere "+alambre*3+" de alambre");
+    alert ("Se requiere "+alambre*3+" metros de alambre");
 
     
 
