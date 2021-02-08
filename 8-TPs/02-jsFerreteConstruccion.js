@@ -38,10 +38,6 @@ function Circulo ()
     alambre = diametro;
 
     alert ("Se requiere "+alambre*3+" metros de alambre");
-
-    
-
-
 }
 function Materiales () 
 {

@@ -11,4 +11,3 @@ function mostrar()
 	txtIdNombre.value = datoingresado;
 
 }
-
