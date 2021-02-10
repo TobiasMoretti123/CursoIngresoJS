@@ -4,17 +4,23 @@ o adolescente (entre 13 y 17 años)
 o niño (menor a 13 años).*/
 function mostrar()
 {
-	var edad;
+	var edadNumero;
+	var edadString;
 
-	edad = txtIdEdad.value;
-	edad = parseInt(edad);
-	if(edad>17)
+	edadString = txtIdEdad.value;
+	edadNumero = parseInt(edadString);
+	
+	if (edadString!==edadNumero)
+	{
+		alert ("Usted no ingreso un numero")
+	}
+	else if(edadNumero>17)
 	{
 		alert("Usted es mayor de edad");
 	}
 	else
 	{
-		if(edad<13)
+		if(edadNumero<13)
 		{
 			alert("Usted es un niño");
 		}
