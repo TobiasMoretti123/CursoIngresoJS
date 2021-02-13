@@ -81,7 +81,7 @@ function CalcularPrecio ()
 
     if (importeTotal>120)
     {   
-        alert ("Usted pago "+(importeTotal*10/100+importeTotal)+" de IIBB.”, siendo "+importeTotal*10/100+" el impuesto que se pagó");
+        alert ("Usted pago "+(importeTotal*10/100+importeTotal)+" de IIBB., siendo"+importeTotal*10/100+" el impuesto que se pagó");
     }
     txtIdprecioDescuento.value = importeTotal;
  }
