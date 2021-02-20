@@ -9,79 +9,86 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó.*/
 function CalcularPrecio () 
 {
-    var cantidadLamparitas;
+    var lamparas = 35;
+    var cantidadLamparas;
+    var precioLamparas;
     var descuento;
-    var precioFinal;
-    var precioUnitarioLampara = 35;
-    var marcaLampara;
-    var descuentoFinal;
     var importeTotal;
-       
-    cantidadLamparitas = txtIdCantidad.value;
-    cantidadLamparitas = parseInt(cantidadLamparitas);
- 
-    marcaLampara = Marca.value;
+    var marca;
+    var precioConDescuento;
+    var impuestoIIBB;
 
-    if(cantidadLamparitas>5)
-    {
-        descuento = 50
-    }
-    else
-    {
-        if(cantidadLamparitas == 5)
-        {
-            if(marcaLampara == "ArgentinaLuz")
-            {
-               descuento = 40 
-            }
-            else
-            {
-              descuento = 30  
-            }
-        }
-        else
-        {
-            if(cantidadLamparitas == 4)
-            {
-                if(marcaLampara == "ArgentinaLuz" || marcaLampara == "FelipeLamparas")
+    marca = Marca.value;
+    cantidadLamparas = txtIdCantidad.value;
+    cantidadLamparas = parseInt (cantidadLamparas);
+
+   if (cantidadLamparas>5) 
+   {
+       descuento = 50;
+   }
+   else
+   {
+       switch (marca) 
+       {
+            case "ArgentinaLuz":
+               switch (cantidadLamparas) 
+               {
+                    case 5:
+                        descuento= 40;
+                        break;
+                    case 4:
+                        descuento = 25;
+                        break;
+                    case 3:
+                        descuento = 15;
+                        break;
+                    default:
+                        descuento = 0;
+                        break;
+               }
+            break;
+            case "FelipeLamparaz":
+                switch (cantidadLamparas) 
                 {
-                   descuento = 25 
+                    case 5:
+                        descuento = 30;
+                        break;
+                    case 4:
+                        descuento = 25;
+                        break;
+                    case 3:
+                        descuento = 10;
+                        break;
+                    default:
+                        descuento = 0;
+                        break;
                 }
-                else
+            default:
+                switch (cantidadLamparas) 
                 {
-                   descuento = 20 
-                } 
-            }
-            else
-            {
-                if (cantidadLamparitas == 3)
-                {
-                   if(marcaLampara == "ArgentinaLuz")
-                   {
-                       descuento = 15
-                   }
-                   else
-                   {
-                       if (marcaLampara == "FelipeLamparas")
-                       {
-                           descuento = 10
-                       }
-                       else
-                       {
-                           descuento = 5
-                       }
-                   }
-                }                   
-            } 
-        }
-    }
-    precioFinal = cantidadLamparitas*precioUnitarioLampara;
-    descuentoFinal = precioFinal*descuento/100
-    importeTotal = precioFinal-descuentoFinal;
+                    case 5:
+                        descuento = 30;
+                        break;
+                    case 4:
+                        descuento = 20;
+                        break;
+                    case 3:
+                        descuento = 5;
+                    default:
+                        descuento = 0;
+                }
+       }
 
-    if (importeTotal>120)
-    {   
-        alert ("Usted pago "+(importeTotal*10/100+importeTotal)+" de IIBB., siendo"+importeTotal*10/100+" el impuesto que se pagó");
+   }
+    precioLamparas = cantidadLamparas*lamparas;
+    precioConDescuento = precioLamparas*descuento/100;
+    importeTotal = precioLamparas - precioConDescuento;
+    impuestoIIBB = importeTotal*10/100;
+
+    if (importeTotal>120)    
+    {
+        alert ("Usted pago "+(importeTotal+impuestoIIBB)+" de IIBB.”, siendo "+impuestoIIBB+" el impuesto que se pagó.");
     }
     txtIdprecioDescuento.value = importeTotal;
- }
+    
+}
