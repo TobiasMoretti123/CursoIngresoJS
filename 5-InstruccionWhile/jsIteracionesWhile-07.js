@@ -12,20 +12,7 @@ function mostrar()
 	contador = 0;
 	acumulador = 0;
 	respuesta ='si';
-
-	while (respuesta = 'si') 
-	{
-		respuesta = prompt ("Desea ingresar otro numero? si/no");
-		ingreso = prompt ("Numero que desee agregar");
-		ingreso = parseInt (ingreso);
-		acumulador = acumulador + ingreso
-		contador = contador + 1
-		if (respuesta == 'no')
-		{
-			txtIdSuma.value=acumulador;
-			txtIdPromedio.value=acumulador/contador;
-		}
-	}
+	
 	txtIdSuma.value=acumulador;
 	txtIdPromedio.value=acumulador/contador;
 }
