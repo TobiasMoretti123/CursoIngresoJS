@@ -9,21 +9,74 @@ hasta que el usuario quiera, mostrar:
 6-Cantidad de números pares.
 7-Promedio de positivos.
 8-Promedios de negativos.
-9-Diferencia entre positivos y negativos, (positvos-negativos). */
+9-Diferencia entre positivos y negativos, (positivos-negativos). */
 function mostrar()
 {
-	//declarar contadores y variables 
-	var respuesta;
 	var numeroIngresado;
-	var sumaNegativos=0;
+	var respuesta;
+	var promedioPositivo;
+	var promedioNegativo;
+	var negativos;
+	var positivos;
+	var contadorDeCeros;
+	var contadorPares;
+	var contador;
 
-	respuesta="si";
-
-	while(respuesta=="si")
+	contador = 0;
+	negativos = 0;
+	positivos = 0;
+	contadorDeCeros = 0;
+	contadorPares = 0;
+	do 
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		numeroIngresado = prompt("Ingrese un numero");
+		numeroIngresado = parseInt (numeroIngresado);
+		if (isNaN (numeroIngresado)) 
+		{
+			alert ("Ingrese un numero valido");
+		} 
+		else 
+		{
+			if (numeroIngresado == 0) 
+			{
+				contadorDeCeros = contadorDeCeros +1
+			}
+			else
+			{
+				if (numeroIngresado%2==0) 
+				{
+					contadorPares++
+				}
+				else
+				{
+					if(numeroIngresado>0)
+					{
+						positivos = positivos + numeroIngresado;
+					}
+					else
+					{
+						if (numeroIngresado<0)
+						{
+							negativos = negativos + numeroIngresado;
+						}
+					}
+				}	
+			}
+		}
+	respuesta = confirm ("Desea agregar otro numero?");
+	contador++
+	} while (respuesta);
 
-	document.write("la suma de negativos es :"+sumaNegativos);
-}//FIN DE LA FUNCIÓN
+	promedioPositivo = positivos/contador;
+	promedioNegativo = negativos/contador;
+
+	document.write(
+	" La suma de los numeros Negativos es: "+negativos,
+	" La suma de los positivos es: "+positivos,
+	" El promedio de los negativos es: "+promedioNegativo,
+	" El promedio de los positivos es: "+promedioPositivo,
+	" La suma de los negativos es: "+negativos,
+	" La suma de los positivos es: "+positivos,
+	" La cantidad de ceros ingresada es: "+contadorDeCeros,
+	" La cantidad de numeros pares es: "+contadorPares)
+}
