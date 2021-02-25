@@ -1,7 +1,14 @@
+/*al presionar el botón repetir hasta que utilizamos 'BREAK'.*/
 function mostrar()
 {
-	alert("ok");
+	var Break = true;
 
-
-
-}//FIN DE LA FUNCIÓN
+	for(var i; i!=Break; )
+	{
+		Break = confirm("utilizar BREAK?");
+		if (Break==true) 
+		{
+			break;
+		}
+	}
+}
