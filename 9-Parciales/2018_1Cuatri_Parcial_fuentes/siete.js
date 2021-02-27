@@ -5,59 +5,56 @@ b) La nota más baja y el sexo de esa persona.
 c) La cantidad de varones que su nota haya sido mayor o igual a 6.*/
 function mostrar()
 {
-   var notaIngresada;
-   var sexoIngresado;
-   var promedio;
-   var notaMasBaja;
-   var cantidadVarones;
-   var flag=true
+  var arrayNotas = []  
+  var notaIngresada;
+  var arraySexo = []
+  var sexoIngresado;
+  var notaMasBaja;
+  var suma = 0;
+  var promedio;
+  var varones = 0;
+  var sexoDeLaNotaMasBaja;
 
-   cantidadVarones = 0
-   promedio = 0
-
-    for(i=0;i<5;i++)
+  for(var i=0;i<5;i++)
+  {
+    notaIngresada = prompt("Ingrese su nota");
+    notaIngresada = parseInt(notaIngresada);
+    sexoIngresado = prompt("Ingrese su sexo f femenino, m masculino");
+    if (isNaN(notaIngresada)||notaIngresada<0||notaIngresada>10) 
     {
-        notaIngresada = prompt("Ingrese una nota del 0 al 10");
-        notaIngresada = parseInt(notaIngresada);
-        sexoIngresado = prompt("Ingrese su sexo f femenino o m masculino");
-    
-        if (notaIngresada<0||notaIngresada>10) 
-        {
-            alert("Ingrese una nota valida");
-            break;
-        } 
-        else 
-        {
-            if (sexoIngresado!="f"&&sexoIngresado!="m") 
-            {
-                alert("Ingrese un sexo valido");
-                break;
-            }
-            else
-            {
-                if (sexoIngresado == "m" && notaIngresada>=6) 
-                {
-                    cantidadVarones++
-                }
-                else
-                {
-                    if (flag==true) 
-                    {
-                        notaMasBaja = notaIngresada
-                    }
-                    else
-                    {
-                        if (notaIngresada<notaMasBaja) 
-                        {
-                            notaMasBaja = notaIngresada
-                        }
-                    }
-                }
-            }
-        }
-        promedio = promedio + notaIngresada
+        alert("Ingrese una nota valida");
     }
-    alert ("El promedio de las notas es: "+promedio/i);
-    alert ("La nota mas baja es: "+notaMasBaja);
-    alert ("La cantidad de varones que su nota es mayor o igual a 6 es: "+cantidadVarones);
+    else
+    {
+        if (sexoIngresado!="f" && sexoIngresado!="m") 
+        {
+            alert("Ingrese un sexo valido");
+        }
+        else if (sexoIngresado=="m"&&notaIngresada>=6) 
+        {
+            varones++
+        }
+    }
+    arraySexo.push (sexoIngresado);
+    arrayNotas.push(notaIngresada);
+  }
+  sexoDeLaNotaMasBaja = arraySexo[0];
+  notaMasBaja = arrayNotas[0];
+  for(var i=1;i<arrayNotas.length;i++)
+  {
+    if (arrayNotas[i]<notaMasBaja) 
+    {   
+        notaMasBaja=arrayNotas[i];
+        sexoDeLaNotaMasBaja = arraySexo[i];
+    }
+  }
+  for(var i=1;i<arrayNotas.length;i++)
+  {
+    suma = suma + arrayNotas[i];
+  }
+  promedio = suma/i
+  document.write(
+  "Nota mas baja es: "+notaMasBaja+" Y su sexo es: "+sexoDeLaNotaMasBaja,
+  "<br/>El promedio de las notas es: "+promedio,
+  "<br/>La cantidad de varones que tienen 6 o mas son: "+varones)
 }

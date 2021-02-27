@@ -6,9 +6,6 @@ function mostrar()
 	var arrayNumeros = []
     var numeroIngresado;
     var confirmar;
-    var contador;
-
-    contador = 0
 
     do 
     {
@@ -16,12 +13,11 @@ function mostrar()
         numeroIngresado = parseInt(numeroIngresado);
         arrayNumeros.push(numeroIngresado);
         confirmar=confirm("Desea continuar?");
-        contador++
 
     } while (confirmar);
 
 
-    for(var i=0;i<contador;i++)
+    for(var i=0;i<arrayNumeros.length;i++)
     {
         document.write(arrayNumeros[i]);
     }
