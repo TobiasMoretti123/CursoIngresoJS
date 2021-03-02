@@ -93,19 +93,19 @@ function mostrar()
 	if (unidadesAlcohol>unidadesBarbijo&&unidadesAlcohol>unidadesJabon) 
 	{
 		promedioDelDeMasUnidades = cantidadDeProducto/unidadesAlcohol
-		document.write("<br/>b)El producto con mas unidades es el alcohol y el promedio es de: "+promedioDelDeMasUnidades)
+		document.write("<br/>b) El producto con mas unidades es el alcohol y el promedio es de: "+promedioDelDeMasUnidades)
 	}
 	else
 	{
 		if (unidadesJabon>unidadesBarbijo) 
 		{
 			promedioDelDeMasUnidades = cantidadDeProducto/unidadesJabon
-			document.write("<br/>b)El producto con mas unidades es el jabon y el promedio es de: "+promedioDelDeMasUnidades)
+			document.write("<br/>b) El producto con mas unidades es el jabon y el promedio es de: "+promedioDelDeMasUnidades)
 		}
 		else
 		{
 			promedioDelDeMasUnidades = cantidadDeProducto/unidadesBarbijo
-			document.write("<br/>b)El producto con mas unidades es el barbijo y el promedio es de: "+promedioDelDeMasUnidades)
+			document.write("<br/>b) El producto con mas unidades es el barbijo y el promedio es de: "+promedioDelDeMasUnidades)
 		}	
 	}
 	document.write("<br/>c) Las unidades de jabones es: "+unidadesJabon)
