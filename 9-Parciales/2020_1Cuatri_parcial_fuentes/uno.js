@@ -1,5 +1,5 @@
-
-/*Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
+/*
+Debemos realizar la carga de 5(cinco) productos de prevención de contagio,
 de cada una debo obtener los siguientes datos:
 el tipo (validar "barbijo" , "jabón" o "alcohol") ,
 el precio (validar entre 100 y 300),
@@ -16,34 +16,99 @@ function mostrar()
 	var cantidadDeProducto;
 	var marcaDelProducto;
 	var fabricanteProducto;
-	var cantidadJabon;
-	
+	var masBaratoAlcohol;
+	var masbaratoCantidad;
+	var fabricanteDelMasBarato;
+	var promedioDelDeMasUnidades;
+	var unidadesJabon;
+	var unidadesAlcohol;
+	var unidadesBarbijo; 
+	var banderaDelMasBarato;
+
+	unidadesJabon = 0;
+	unidadesAlcohol = 0;
+	unidadesBarbijo = 0;
+	banderaDelMasBarato = true
+
 	for(var i=0;i<5;i++)
 	{
-		tipoProductos = prompt("Ingrese tipo de producto barbijo , jabón o alcohol");
-		if (isNaN(tipoProductos)==true||tipoProductos!="barbijo"&&tipoProductos!="jabón"&&tipoProductos!="alcohol") 
+		tipoProductos = prompt("Ingrese tipo de producto barbijo, jabon o alcohol");
+		while (isNaN(tipoProductos)==false||tipoProductos!="barbijo"&&tipoProductos!="jabon"&&tipoProductos!="alcohol") 
 		{
-			alert("Error, reingrese los datos");
-			break;
+			tipoProductos = prompt ("Error, Ingrese tipo de producto barbijo, jabon o alcohol");
 		}
-
-		precioProducto = prompt("Ingrese el precio de producto entre 100 y 300");
+		precioProducto = prompt ("Ingrese precio del producto entre 100 y 300");
 		precioProducto = parseInt(precioProducto);
-		if (isNaN(precioProducto)==false||precioProducto<100||precioProducto>300) 
+		while (isNaN(precioProducto)==true||precioProducto<100||precioProducto>300) 
 		{
-			alert("Error, reingrese los datos");
-			break;
+			precioProducto = prompt("Error, Ingrese precio del producto entre 100 y 300");
 		}
-
-		cantidadDeProducto = prompt("Ingrese una cantidada no mayor a 1000");
-		cantidadDeProducto = parseInt(cantidadDeProducto);
-		if (isNaN(cantidadDeProducto)==false||cantidadDeProducto<1||cantidadDeProducto>1000) 
+		cantidadDeProducto = prompt ("ingrese cantidad de producto entre 1 y 1000");
+		cantidadDeProducto = parseInt(cantidadDeProducto)
+		while (isNaN(cantidadDeProducto)==true||cantidadDeProducto<1||cantidadDeProducto>1000) 
 		{
-			alert("Error, reingrese los datos");
-			break;
+			cantidadDeProducto = prompt("Error, ingrese cantidad de producto entre 1 y 1000")
 		}
+		marcaDelProducto = prompt("Ingrese marca del producto");
+		fabricanteProducto = prompt("Ingrese fabricante del producto");
 
-		marcaDelProducto = prompt("Ingrese marca o frabricante");
-		fabricanteProducto = prompt("Ingrese un fabricante");
+		switch (tipoProductos) 
+		{
+			case "alcohol":
+				unidadesAlcohol = unidadesAlcohol + cantidadDeProducto;
+				if (banderaDelMasBarato == true) 
+				{
+					masBaratoAlcohol = precioProducto;
+					masbaratoCantidad = cantidadDeProducto;
+					fabricanteDelMasBarato = fabricanteProducto;
+					banderaDelMasBarato = false
+				}
+				else
+				{
+					if (masBaratoAlcohol<precioProducto) 
+					{
+						masBaratoAlcohol = precioProducto;
+						masbaratoCantidad = cantidadDeProducto;
+						fabricanteDelMasBarato = fabricanteProducto;
+					}
+				}
+				break;
+			case "barbijo":
+				unidadesBarbijo = unidadesBarbijo + cantidadDeProducto;
+				break;
+			case "jabon":
+				unidadesJabon = unidadesJabon + cantidadDeProducto;
+				break;
+		}
 	}
+	if (unidadesAlcohol==0) 
+	{
+		document.write("a) No se ingreso alcohol");
+	}
+	else
+	{
+		document.write("a) El fabricante del alcohol mas barato es: "+fabricanteDelMasBarato+" con una cantidad de: "+masbaratoCantidad+" articulos");
+	}
+
+	if (unidadesAlcohol>unidadesBarbijo&&unidadesAlcohol>unidadesJabon) 
+	{
+		promedioDelDeMasUnidades = cantidadDeProducto/unidadesAlcohol
+		document.write("<br/>b)El producto con mas unidades es el alcohol y el promedio es de: "+promedioDelDeMasUnidades)
+	}
+	else
+	{
+		if (unidadesJabon>unidadesBarbijo) 
+		{
+			promedioDelDeMasUnidades = cantidadDeProducto/unidadesJabon
+			document.write("<br/>b)El producto con mas unidades es el jabon y el promedio es de: "+promedioDelDeMasUnidades)
+		}
+		else
+		{
+			promedioDelDeMasUnidades = cantidadDeProducto/unidadesBarbijo
+			document.write("<br/>b)El producto con mas unidades es el barbijo y el promedio es de: "+promedioDelDeMasUnidades)
+		}	
+	}
+	document.write("<br/>c) Las unidades de jabones es: "+unidadesJabon)
+
+	
 }
