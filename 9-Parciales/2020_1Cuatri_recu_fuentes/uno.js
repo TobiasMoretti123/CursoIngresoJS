@@ -92,9 +92,9 @@ function mostrar()
 		acumuladorPrecio = acumuladorPrecio + precioProducto;
 	}
 
-	if (cantidadJabon == 0 ) 
+	if (banderaJabones == false) 
 		{
-			alert("No se ingreso ningun jabon")
+			document.write("No se ingreso ningun jabon")
 		}
 		else
 		{
