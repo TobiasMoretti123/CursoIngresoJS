@@ -19,6 +19,7 @@ function mostrar()
   var importeTotalConDescuento;
   var importeTotal;
   var acumuladorPrecio;
+  var acumuladorCantidad;
   var cantidadArena;
   var cantidadCal;
   var cantidadCemento;
@@ -33,6 +34,7 @@ function mostrar()
   cantidadCal = 0;
   cantidadCemento = 0;
   acumuladorPrecio = 0;
+  acumuladorCantidad = 0;
   banderaCantidad = true;
   respuesta = "si";
   
@@ -102,12 +104,14 @@ function mostrar()
           masCaro = precioPorBolsa;
       }
     }
-    respuesta = prompt ("Desea agregar mas productos si/no");
+    acumuladorCantidad = acumuladorCantidad + cantidadDeBolsas
     acumuladorPrecio = acumuladorPrecio + precioPorBolsa; 
+    respuesta = prompt ("Desea agregar mas productos si/no");
   }
 
-  importeTotalConDescuento = acumuladorPrecio - acumuladorPrecio*descuento/100;
-  importeTotal = acumuladorPrecio;
+  importeTotal = acumuladorPrecio*acumuladorCantidad
+  importeTotalConDescuento = importeTotal - importeTotal*descuento/100;
+  
 
   document.write("a) El importe total es de: "+importeTotal)
 
