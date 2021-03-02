@@ -10,7 +10,6 @@ a) El importe total a pagar , bruto sin descuento y...
 b) el importe total a pagar con descuento(solo si corresponde)
 d) Informar el tipo ("arena";"cal";"cemento") con mas cantidad de bolsas en el total de la compra.
 f) El tipo mas caro*/
-
 function mostrar()
 {
   var tipoProducto;
@@ -114,7 +113,7 @@ function mostrar()
 
   if (descuento==0) 
   {
-    document.write("<br/>b) No se efectuo ningun descuento")
+    document.write("<br/>No se efectuo ningun descuento")
   }
   else
   {
